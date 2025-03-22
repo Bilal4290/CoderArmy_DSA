@@ -12,3 +12,47 @@
         ✅ Print “India will win the World Cup 2023”, 20 times.
         ✅ Print all Odd numbers from 1 to n, take n as an input from the user.
         ✅ Print all numbers from 1 to n, which is divisible by 4. Take n as an input from the user.
+
+
+
+✅ Print all numbers from 1 to n, which is divisible by 4. Take n as an input from the user.
+
+    #include <iostream>
+    #include <string>  
+    using namespace std;
+
+
+    int getValidInput(string prompt){
+        int num;
+        while(true){
+            cout << prompt;
+            cin >> num;
+
+            if(!cin.fail() && cin.peek() == '\n'){
+                break;
+            }
+
+            cout << "Invalid Input! Please, enter a valid number." << endl;
+            cin.clear();
+            cin.ignore(1000, '\n');
+        }
+        return num;
+    }
+
+    int main() {
+        int num = getValidInput("Enter a number: ");
+
+        cout << "Numbers from 1 to " << num << " that are divisible by 4: ";
+
+        for(int i=1; i <= num; i++){
+            if(i % 4 == 0){
+                cout << i << " ";
+            }
+        }
+
+    
+
+        return 0;
+    }
+
+
